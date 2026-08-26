@@ -20,7 +20,13 @@ export function ThemeToggle() {
         <button
           onClick={() => setTheme(isDark ? "light" : "dark")}
           className="size-8 rounded-md hover:bg-accent text-muted-foreground hover:text-foreground transition-colors inline-flex items-center justify-center"
-          aria-label="Toggle theme"
+          aria-label={
+            mounted
+              ? isDark
+                ? t("nav.theme.light")
+                : t("nav.theme.dark")
+              : t("nav.theme.dark")
+          }
         >
           <span className="inline-flex size-4 items-center justify-center">
             {mounted ? isDark ? <Moon size={16} /> : <Sun size={16} /> : null}

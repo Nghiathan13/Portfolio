@@ -10,11 +10,11 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.projects": "Projects",
     "nav.experience": "Experience",
     "nav.contact": "Contact",
-    "nav.theme.light": "Chế độ sáng",
-    "nav.theme.dark": "Chế độ tối",
+    "nav.theme.light": "Chuyển sang chế độ sáng",
+    "nav.theme.dark": "Chuyển sang chế độ tối",
     "nav.menu.open": "Mở menu",
     "nav.menu.close": "Đóng menu",
-    "nav.lang.tooltip": "Tiếng Việt",
+    "nav.lang.tooltip": "Chuyển sang tiếng Anh",
 
     // Hero
     "hero.badge": "Có sẵn cho cơ hội mới",
@@ -109,11 +109,11 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.projects": "Projects",
     "nav.experience": "Experience",
     "nav.contact": "Contact",
-    "nav.theme.light": "Light mode",
-    "nav.theme.dark": "Dark mode",
+    "nav.theme.light": "Switch to light mode",
+    "nav.theme.dark": "Switch to dark mode",
     "nav.menu.open": "Open menu",
     "nav.menu.close": "Close menu",
-    "nav.lang.tooltip": "English",
+    "nav.lang.tooltip": "Switch to Vietnamese",
 
     // Hero
     "hero.badge": "Open to new opportunities",
