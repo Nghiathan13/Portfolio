@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "eslint .",
     "fsd": "steiger ./src",
-    "css": "stylelint \"app/**/*.css\""
+    "css": "stylelint \"app/**/*.css\"",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm lint && pnpm fsd && pnpm css && pnpm typecheck"
   },
   "dependencies": {
     "@radix-ui/react-separator": "^1.1.7",

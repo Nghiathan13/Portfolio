@@ -1,20 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/shared/ui";
 import { useI18n } from "@/shared/i18n";
 
+const emptySubscribe = () => () => {};
+
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const { t } = useI18n();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const isDark = resolvedTheme === "dark";
 
   return (
