@@ -15,6 +15,7 @@ import {
 } from "@/shared/ui";
 import { fadeUp, stagger } from "@/shared/lib";
 import { useI18n } from "@/shared/i18n";
+import { site } from "@/shared/config";
 
 export function Contact() {
   const { t } = useI18n();
@@ -77,15 +78,15 @@ export function Contact() {
                 {t("contact.find_me")}
               </span>
               {[
-                { icon: Github, label: "GitHub", href: "https://github.com/Nghiathan13" },
-                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/minh-nghĩa-765b71330/" },
-                { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/minh.nghia.275650" },
-              ].map(({ icon: Icon, label, href }) => (
+                { icon: Github, label: "GitHub", href: site.github, hover: "hover:text-[#181717] dark:hover:text-white" },
+                { icon: Linkedin, label: "LinkedIn", href: site.linkedin, hover: "hover:text-[#0A66C2]" },
+                { icon: Facebook, label: "Facebook", href: site.facebook, hover: "hover:text-[#1877F2]" },
+              ].map(({ icon: Icon, label, href, hover }) => (
                 <Tooltip key={label}>
                   <TooltipTrigger asChild>
                     <a
                       href={href}
-                      className="p-2 rounded-lg border border-border hover:border-emerald-500/50 hover:bg-accent transition-all"
+                      className={`p-2 rounded-lg border border-border text-muted-foreground hover:border-emerald-500/50 hover:bg-accent transition-all ${hover}`}
                       aria-label={label}
                     >
                       <Icon size={18} />

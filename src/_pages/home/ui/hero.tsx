@@ -111,16 +111,16 @@ export function Hero() {
           </Button>
           <div className="flex items-center gap-3 ml-2">
             {[
-              { icon: Github, label: "GitHub", href: site.github },
-              { icon: Linkedin, label: "LinkedIn", href: site.linkedin },
-              { icon: Facebook, label: "Facebook", href: site.facebook },
-              { icon: Mail, label: "Email", href: `mailto:${site.email}` },
-            ].map(({ icon: Icon, label, href }) => (
+              { icon: Github, label: "GitHub", href: site.github, hover: "hover:text-[#181717] dark:hover:text-white" },
+              { icon: Linkedin, label: "LinkedIn", href: site.linkedin, hover: "hover:text-[#0A66C2]" },
+              { icon: Facebook, label: "Facebook", href: site.facebook, hover: "hover:text-[#1877F2]" },
+              { icon: Mail, label: "Email", href: `mailto:${site.email}`, hover: "hover:text-emerald-500" },
+            ].map(({ icon: Icon, label, href, hover }) => (
               <Tooltip key={label}>
                 <TooltipTrigger asChild>
                   <a
                     href={href}
-                    className="p-2.5 rounded-full border border-border hover:bg-accent hover:border-emerald-500/50 transition-all"
+                    className={`p-2.5 rounded-full border border-border text-muted-foreground hover:bg-accent hover:border-emerald-500/50 transition-all ${hover}`}
                     aria-label={label}
                   >
                     <Icon size={18} />

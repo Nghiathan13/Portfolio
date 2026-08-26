@@ -15,16 +15,16 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-4">
           {[
-            { icon: Github, href: site.github, label: "GitHub" },
-            { icon: Linkedin, href: site.linkedin, label: "LinkedIn" },
-            { icon: Facebook, href: site.facebook, label: "Facebook" },
-            { icon: Mail, href: `mailto:${site.email}`, label: "Email" },
-          ].map(({ icon: Icon, href, label }) => (
+            { icon: Github, href: site.github, label: "GitHub", hover: "hover:text-[#181717] dark:hover:text-white" },
+            { icon: Linkedin, href: site.linkedin, label: "LinkedIn", hover: "hover:text-[#0A66C2]" },
+            { icon: Facebook, href: site.facebook, label: "Facebook", hover: "hover:text-[#1877F2]" },
+            { icon: Mail, href: `mailto:${site.email}`, label: "Email", hover: "hover:text-emerald-500" },
+          ].map(({ icon: Icon, href, label, hover }) => (
             <Tooltip key={label}>
               <TooltipTrigger asChild>
                 <a
                   href={href}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className={`text-muted-foreground transition-colors ${hover}`}
                   aria-label={label}
                 >
                   <Icon size={18} />
