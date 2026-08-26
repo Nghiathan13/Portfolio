@@ -14,7 +14,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.theme.dark": "Chế độ tối",
     "nav.menu.open": "Mở menu",
     "nav.menu.close": "Đóng menu",
-    "nav.lang.tooltip": "English",
+    "nav.lang.tooltip": "Tiếng Việt",
 
     // Hero
     "hero.badge": "Có sẵn cho cơ hội mới",
@@ -113,7 +113,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.theme.dark": "Dark mode",
     "nav.menu.open": "Open menu",
     "nav.menu.close": "Close menu",
-    "nav.lang.tooltip": "Tiếng Việt",
+    "nav.lang.tooltip": "English",
 
     // Hero
     "hero.badge": "Open to new opportunities",

@@ -126,7 +126,7 @@ export function Header() {
           exit={{ opacity: 0, height: 0 }}
           className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
         >
-          <div className="px-4 py-3 flex flex-col">
+          <div className="flex flex-col">
             {navLinks.map((link) => {
               const isActive = activeId === link.id.toLowerCase();
               return (

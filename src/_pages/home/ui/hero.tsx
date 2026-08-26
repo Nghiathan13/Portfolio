@@ -124,7 +124,7 @@ export function Hero() {
                     <Icon size={18} />
                   </a>
                 </TooltipTrigger>
-                <TooltipContent>{label}</TooltipContent>
+                <TooltipContent side="bottom">{label}</TooltipContent>
               </Tooltip>
             ))}
           </div>
