@@ -51,7 +51,19 @@ const translations: Record<Locale, Record<string, string>> = {
     "projects.label": "Dự án",
     "projects.title": "Các dự án nổi bật",
     "projects.description":
-      "Một số dự án mình đã xây dựng và đóng góp. Hãy thay thế bằng dự án thực tế của bạn.",
+      "Một số dự án public trên GitHub.",
+    "projects.engvocab.title": "EngVocab",
+    "projects.engvocab.description":
+      "Web học tiếng Anh song ngữ: ôn từ vựng, luyện TOEIC, dictation và theo dõi tiến độ. Next.js client + NestJS API, PostgreSQL.",
+    "projects.ownlish.title": "Ownlish",
+    "projects.ownlish.description":
+      "Nền tảng học tiếng Anh thế hệ sau EngVocab: web Next.js, API NestJS/Prisma, kèm app desktop Tauri.",
+    "projects.pharmacy.title": "Pharmacy Inventory",
+    "projects.pharmacy.description":
+      "Hệ thống kho và cấp phát nhà thuốc (Django): lô hàng, hạn dùng, đơn thuốc, nhập/xuất kho theo vai trò.",
+    "projects.datathon.title": "VinUni Datathon 2026",
+    "projects.datathon.description":
+      "Bài dự thi Round 1 — phân tích doanh thu và dự báo bán hàng cho công ty thời trang e-commerce giả lập.",
     "projects.placeholder.title": "Dự án {{n}}",
     "projects.placeholder.description":
       "Mô tả dự án của bạn sẽ nằm ở đây. Hãy thêm chi tiết về chức năng, công nghệ sử dụng và vai trò của bạn.",
@@ -86,7 +98,7 @@ const translations: Record<Locale, Record<string, string>> = {
       "Mình luôn sẵn sàng lắng nghe và trao đổi về các cơ hội hợp tác, dự án mới, hoặc đơn giản là kết nối với những người đồng nghiệp trong ngành.",
     "contact.find_me": "Tìm mình trên:",
     "contact.email.label": "Email",
-    "contact.email.value": "email@example.com",
+    "contact.email.value": "thanminhnghia3@gmail.com",
     "contact.location.label": "Địa điểm",
     "contact.location.value": "Thành phố của bạn",
     "contact.form.name": "Tên",
@@ -150,7 +162,19 @@ const translations: Record<Locale, Record<string, string>> = {
     "projects.label": "Projects",
     "projects.title": "Featured Projects",
     "projects.description":
-      "Some projects I've built and contributed to. Replace these with your actual projects.",
+      "Selected public projects from GitHub.",
+    "projects.engvocab.title": "EngVocab",
+    "projects.engvocab.description":
+      "Bilingual English-learning web app: vocabulary review, TOEIC practice, dictation, and progress tracking. Next.js client + NestJS API on PostgreSQL.",
+    "projects.ownlish.title": "Ownlish",
+    "projects.ownlish.description":
+      "Next-generation English-learning platform after EngVocab: Next.js web, NestJS/Prisma API, plus a Tauri desktop app.",
+    "projects.pharmacy.title": "Pharmacy Inventory",
+    "projects.pharmacy.description":
+      "Django pharmacy inventory and dispensing system: batches, expiry dates, prescriptions, and role-based stock workflows.",
+    "projects.datathon.title": "VinUni Datathon 2026",
+    "projects.datathon.description":
+      "Round 1 submission — revenue analysis and sales forecasting for a simulated Vietnamese fashion e-commerce company.",
     "projects.placeholder.title": "Project {{n}}",
     "projects.placeholder.description":
       "Your project description goes here. Add details about features, tech stack used, and your role.",
@@ -185,7 +209,7 @@ const translations: Record<Locale, Record<string, string>> = {
       "I'm always open to discussing collaborations, new projects, or simply connecting with fellow developers in the industry.",
     "contact.find_me": "Find me on:",
     "contact.email.label": "Email",
-    "contact.email.value": "email@example.com",
+    "contact.email.value": "thanminhnghia3@gmail.com",
     "contact.location.label": "Location",
     "contact.location.value": "Your City",
     "contact.form.name": "Name",

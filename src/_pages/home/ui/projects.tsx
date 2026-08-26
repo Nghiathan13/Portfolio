@@ -34,15 +34,21 @@ export function Projects() {
                     {t("projects.image")}
                   </span>
                   <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3">
-                    <a
-                      href={project.liveUrl}
-                      className="p-2.5 rounded-full bg-background/90 border border-border hover:bg-background transition-colors"
-                      aria-label={t("projects.live")}
-                    >
-                      <ExternalLink size={16} />
-                    </a>
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2.5 rounded-full bg-background/90 border border-border hover:bg-background transition-colors"
+                        aria-label={t("projects.live")}
+                      >
+                        <ExternalLink size={16} />
+                      </a>
+                    ) : null}
                     <a
                       href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
                       className="p-2.5 rounded-full bg-background/90 border border-border hover:bg-background transition-colors"
                       aria-label={t("projects.code")}
                     >
@@ -53,10 +59,7 @@ export function Projects() {
 
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-emerald-500 transition-colors">
-                    {t(project.titleKey).replace(
-                      "{{n}}",
-                      project.titleArgs?.n ?? ""
-                    )}
+                    {t(project.titleKey)}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     {t(project.descriptionKey)}

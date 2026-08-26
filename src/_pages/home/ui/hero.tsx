@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Github,
-  Linkedin,
   Mail,
   MapPin,
   ChevronDown,
@@ -56,7 +55,7 @@ export function Hero() {
         >
           {t("hero.greeting")}{" "}
           <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-            Tên của bạn
+            Thân Minh Nghĩa
           </span>
         </motion.h1>
 
@@ -110,9 +109,8 @@ export function Hero() {
           </Button>
           <div className="flex items-center gap-3 ml-2">
             {[
-              { icon: Github, label: "GitHub", href: "#" },
-              { icon: Linkedin, label: "LinkedIn", href: "#" },
-              { icon: Mail, label: "Email", href: "#" },
+              { icon: Github, label: "GitHub", href: "https://github.com/Nghiathan13" },
+              { icon: Mail, label: "Email", href: "mailto:thanminhnghia3@gmail.com" },
             ].map(({ icon: Icon, label, href }) => (
               <Tooltip key={label}>
                 <TooltipTrigger asChild>

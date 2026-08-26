@@ -14,15 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Full Stack Engineer",
+  title: "Thân Minh Nghĩa | Portfolio",
   description:
-    "Full Stack Engineer Portfolio - Building modern web experiences with React, Next.js, TypeScript, and more.",
+    "Portfolio of Thân Minh Nghĩa — web apps, English-learning products, and full-stack projects.",
   keywords: [
-    "Full Stack Engineer",
+    "Thân Minh Nghĩa",
     "Portfolio",
-    "React",
     "Next.js",
     "TypeScript",
+    "NestJS",
   ],
 };
 

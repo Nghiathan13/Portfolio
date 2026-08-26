@@ -68,7 +68,7 @@ export function Header() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="font-mono font-bold text-lg tracking-tight hover:opacity-80 transition-opacity"
         >
-          &lt;Tên của bạn /&gt;
+          &lt;Nghia /&gt;
         </button>
 
         <div className="hidden md:flex items-center gap-1">
