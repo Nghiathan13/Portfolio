@@ -14,5 +14,13 @@ export const EDUCATION: {
   {
     degreeKey: "experience.degree",
     schoolKey: "experience.school",
+    periodKey: "experience.school.period",
+  },
+];
+
+export const CERTIFICATES = [
+  {
+    titleKey: "experience.cert.toeic",
+    periodKey: "experience.cert.toeic.period",
   },
 ];

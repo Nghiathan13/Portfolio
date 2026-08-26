@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, GraduationCap, Award } from "lucide-react";
 import { Badge, Card, CardContent, SectionHeader } from "@/shared/ui";
 import { fadeUp, stagger } from "@/shared/lib";
 import { useI18n } from "@/shared/i18n";
-import { EDUCATION, EXPERIENCES } from "../model/experience";
+import { CERTIFICATES, EDUCATION, EXPERIENCES } from "../model/experience";
 
 export function Experience() {
   const { t } = useI18n();
@@ -122,6 +122,31 @@ export function Experience() {
                   </motion.div>
                 ))}
               </div>
+
+              {CERTIFICATES.length > 0 ? (
+                <>
+                  <motion.h3
+                    variants={fadeUp}
+                    custom={3}
+                    className="text-lg font-semibold flex items-center gap-2 pt-4"
+                  >
+                    <Award size={20} className="text-cyan-500" />
+                    {t("experience.certificates")}
+                  </motion.h3>
+                  {CERTIFICATES.map((cert, i) => (
+                    <motion.div key={cert.titleKey} variants={fadeUp} custom={4 + i}>
+                      <Card className="hover:border-cyan-500/30 transition-colors">
+                        <CardContent className="p-5">
+                          <h4 className="font-semibold">{t(cert.titleKey)}</h4>
+                          <p className="text-xs text-muted-foreground mt-2">
+                            {t(cert.periodKey)}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </>
+              ) : null}
             </motion.div>
           </div>
         </div>

@@ -17,3 +17,4 @@ export {
   TooltipProvider,
 } from "./tooltip";
 export { SectionHeader } from "./section-header";
+export { Facebook } from "./facebook";

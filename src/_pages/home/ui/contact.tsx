@@ -6,6 +6,7 @@ import {
   Button,
   Card,
   CardContent,
+  Facebook,
   SectionHeader,
   Separator,
   Tooltip,
@@ -78,6 +79,7 @@ export function Contact() {
               {[
                 { icon: Github, label: "GitHub", href: "https://github.com/Nghiathan13" },
                 { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/minh-nghĩa-765b71330/" },
+                { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/minh.nghia.275650" },
               ].map(({ icon: Icon, label, href }) => (
                 <Tooltip key={label}>
                   <TooltipTrigger asChild>

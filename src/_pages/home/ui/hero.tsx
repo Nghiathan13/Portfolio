@@ -10,7 +10,7 @@ import {
   ChevronDown,
   Coffee,
 } from "lucide-react";
-import { Button, Tooltip, TooltipContent, TooltipTrigger } from "@/shared/ui";
+import { Button, Facebook, Tooltip, TooltipContent, TooltipTrigger } from "@/shared/ui";
 import { useI18n } from "@/shared/i18n";
 import { site } from "@/shared/config";
 
@@ -113,6 +113,7 @@ export function Hero() {
             {[
               { icon: Github, label: "GitHub", href: site.github },
               { icon: Linkedin, label: "LinkedIn", href: site.linkedin },
+              { icon: Facebook, label: "Facebook", href: site.facebook },
               { icon: Mail, label: "Email", href: `mailto:${site.email}` },
             ].map(({ icon: Icon, label, href }) => (
               <Tooltip key={label}>

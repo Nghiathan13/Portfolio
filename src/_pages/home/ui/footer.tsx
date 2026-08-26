@@ -1,7 +1,7 @@
 "use client";
 
 import { Github, Linkedin, Mail } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/shared/ui";
+import { Facebook, Tooltip, TooltipContent, TooltipTrigger } from "@/shared/ui";
 import { useI18n } from "@/shared/i18n";
 import { site } from "@/shared/config";
 
@@ -17,6 +17,7 @@ export function Footer() {
           {[
             { icon: Github, href: site.github, label: "GitHub" },
             { icon: Linkedin, href: site.linkedin, label: "LinkedIn" },
+            { icon: Facebook, href: site.facebook, label: "Facebook" },
             { icon: Mail, href: `mailto:${site.email}`, label: "Email" },
           ].map(({ icon: Icon, href, label }) => (
             <Tooltip key={label}>

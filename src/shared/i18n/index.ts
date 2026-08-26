@@ -85,8 +85,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "experience.education": "Học vấn",
     "experience.degree": "Kỹ sư Công nghệ Logistics",
     "experience.school": "Đại học Kinh tế TP. Hồ Chí Minh (UEH)",
-    "experience.school.period": "20XX - 20XX",
+    "experience.school.period": "08/2023 – Hiện tại",
     "experience.certificates": "Chứng chỉ",
+    "experience.cert.toeic": "TOEIC 805",
+    "experience.cert.toeic.period": "05/2026",
     "experience.certificates.placeholder": "Thêm chứng chỉ của bạn ở đây",
 
     // Contact
@@ -196,8 +198,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "experience.education": "Education",
     "experience.degree": "Engineer in Logistics Technology",
     "experience.school": "University of Economics Ho Chi Minh City (UEH)",
-    "experience.school.period": "20XX - 20XX",
+    "experience.school.period": "Aug 2023 – Present",
     "experience.certificates": "Certificates",
+    "experience.cert.toeic": "TOEIC 805",
+    "experience.cert.toeic.period": "May 2026",
     "experience.certificates.placeholder": "Add your certificates here",
 
     // Contact
