@@ -1,0 +1,41 @@
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  a,
+  button,
+  [role="button"],
+  input[type="checkbox"],
+  input[type="radio"],
+  select,
+  summary,
+  [type="submit"] {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--color-pressed-ring);
+    outline-offset: 2px;
+  }
+
+  button:active,
+  a:active,
+  [role="button"]:active {
+    transform: scale(0.97);
+    transition:
+      transform 0.1s ease,
+      background-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  button:active:not(:disabled),
+  a:active {
+    background-color: var(--color-pressed);
+  }
+}
