@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/shared/ui";
 import { useI18n } from "@/shared/i18n";
@@ -117,40 +117,50 @@ export function Header() {
         </div>
       </div>
 
-      {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
-        >
-          <div className="flex flex-col">
-            {navLinks.map((link) => {
-              const isActive = activeId === link.id;
-              return (
-                <button
-                  key={link.id}
-                  onClick={() => scrollTo(link.id)}
-                  className={`relative h-8 px-3 text-sm font-medium text-left transition-colors duration-200 inline-flex items-center ${
-                    isActive
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {t(link.key)}
-                  {isActive && (
-                    <motion.div
-                      layoutId="nav-active-mobile"
-                      className="absolute left-0 top-0.5 bottom-0.5 w-0.5 rounded-full bg-emerald-500"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
-                  )}
-                </button>
-              );
-            })}
-          </div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {mobileOpen ? (
+          <motion.div
+            key="mobile-menu"
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="md:hidden overflow-hidden bg-background/95 backdrop-blur-lg border-b border-border"
+          >
+            <div className="flex flex-col">
+              {navLinks.map((link, i) => {
+                const isActive = activeId === link.id;
+                const step = 0.5 / navLinks.length;
+                return (
+                  <motion.button
+                    key={link.id}
+                    type="button"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ delay: step * i, duration: step }}
+                    onClick={() => scrollTo(link.id)}
+                    className={`relative h-8 px-3 text-sm font-medium text-left transition-colors duration-200 inline-flex items-center active:[transform:none] active:text-foreground ${
+                      isActive
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {t(link.key)}
+                    {isActive ? (
+                      <motion.div
+                        layoutId="nav-active-mobile"
+                        className="absolute left-0 top-0.5 bottom-0.5 w-0.5 rounded-full bg-emerald-500"
+                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      />
+                    ) : null}
+                  </motion.button>
+                );
+              })}
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </motion.nav>
   );
 }

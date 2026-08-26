@@ -37,5 +37,6 @@
   button:active:not(:disabled),
   a:active {
     background-color: var(--color-pressed);
+    color: var(--color-pressed-foreground);
   }
 }
