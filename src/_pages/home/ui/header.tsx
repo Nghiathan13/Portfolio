@@ -16,21 +16,19 @@ export function Header() {
 
   const scrollTo = (id: string) => {
     setMobileOpen(false);
-    document
-      .getElementById(id.toLowerCase())
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   const navLinks = [
-    { key: "nav.about", id: "About" },
-    { key: "nav.skills", id: "Skills" },
-    { key: "nav.projects", id: "Projects" },
-    { key: "nav.experience", id: "Experience" },
-    { key: "nav.contact", id: "Contact" },
+    { key: "about.label", id: "about" },
+    { key: "skills.label", id: "skills" },
+    { key: "projects.label", id: "projects" },
+    { key: "experience.label", id: "experience" },
+    { key: "contact.label", id: "contact" },
   ];
 
   useEffect(() => {
-    const sectionIds = navLinks.map((l) => l.id.toLowerCase());
+    const sectionIds = navLinks.map((l) => l.id);
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -73,7 +71,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => {
-            const isActive = activeId === link.id.toLowerCase();
+            const isActive = activeId === link.id;
             return (
               <button
                 key={link.id}
@@ -128,7 +126,7 @@ export function Header() {
         >
           <div className="flex flex-col">
             {navLinks.map((link) => {
-              const isActive = activeId === link.id.toLowerCase();
+              const isActive = activeId === link.id;
               return (
                 <button
                   key={link.id}

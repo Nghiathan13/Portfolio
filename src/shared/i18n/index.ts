@@ -5,11 +5,11 @@ type Locale = "vi" | "en";
 const translations: Record<Locale, Record<string, string>> = {
   vi: {
     // Nav
-    "nav.about": "About",
-    "nav.skills": "Skills",
-    "nav.projects": "Projects",
-    "nav.experience": "Experience",
-    "nav.contact": "Contact",
+    "nav.about": "Giới thiệu",
+    "nav.skills": "Kỹ năng",
+    "nav.projects": "Dự án",
+    "nav.experience": "Kinh nghiệm",
+    "nav.contact": "Liên hệ",
     "nav.theme.light": "Chuyển sang chế độ sáng",
     "nav.theme.dark": "Chuyển sang chế độ tối",
     "nav.menu.open": "Mở menu",
@@ -135,7 +135,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.cta.contact": "Contact Me",
 
     // About
-    "about.label": "Introduction",
+    "about.label": "About",
     "about.title": "About Me",
     "about.description":
       "A bit about my background and passion in the tech world.",
