@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Mail, MapPin, Send } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import {
   Button,
   Card,
@@ -77,6 +77,7 @@ export function Contact() {
               </span>
               {[
                 { icon: Github, label: "GitHub", href: "https://github.com/Nghiathan13" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/minh-nghĩa-765b71330/" },
               ].map(({ icon: Icon, label, href }) => (
                 <Tooltip key={label}>
                   <TooltipTrigger asChild>

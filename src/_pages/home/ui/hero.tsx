@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Github,
+  Linkedin,
   Mail,
   MapPin,
   ChevronDown,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button, Tooltip, TooltipContent, TooltipTrigger } from "@/shared/ui";
 import { useI18n } from "@/shared/i18n";
+import { site } from "@/shared/config";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -109,8 +111,9 @@ export function Hero() {
           </Button>
           <div className="flex items-center gap-3 ml-2">
             {[
-              { icon: Github, label: "GitHub", href: "https://github.com/Nghiathan13" },
-              { icon: Mail, label: "Email", href: "mailto:thanminhnghia3@gmail.com" },
+              { icon: Github, label: "GitHub", href: site.github },
+              { icon: Linkedin, label: "LinkedIn", href: site.linkedin },
+              { icon: Mail, label: "Email", href: `mailto:${site.email}` },
             ].map(({ icon: Icon, label, href }) => (
               <Tooltip key={label}>
                 <TooltipTrigger asChild>

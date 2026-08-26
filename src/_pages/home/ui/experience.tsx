@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, Award } from "lucide-react";
+import { Briefcase, GraduationCap } from "lucide-react";
 import { Badge, Card, CardContent, SectionHeader } from "@/shared/ui";
 import { fadeUp, stagger } from "@/shared/lib";
 import { useI18n } from "@/shared/i18n";
@@ -19,6 +19,7 @@ export function Experience() {
         />
 
         <div className="mt-12 grid lg:grid-cols-3 gap-8">
+          {EXPERIENCES.length > 0 ? (
           <div className="lg:col-span-2">
             <motion.div
               variants={stagger}
@@ -77,8 +78,9 @@ export function Experience() {
               </div>
             </motion.div>
           </div>
+          ) : null}
 
-          <div>
+          <div className={EXPERIENCES.length > 0 ? "" : "lg:col-span-3 max-w-xl"}>
             <motion.div
               variants={stagger}
               initial="hidden"
@@ -110,32 +112,16 @@ export function Experience() {
                         <p className="text-sm text-teal-500 font-medium mt-1">
                           {t(edu.schoolKey)}
                         </p>
-                        <p className="text-xs text-muted-foreground mt-2">
-                          {t(edu.periodKey)}
-                        </p>
+                        {edu.periodKey ? (
+                          <p className="text-xs text-muted-foreground mt-2">
+                            {t(edu.periodKey)}
+                          </p>
+                        ) : null}
                       </CardContent>
                     </Card>
                   </motion.div>
                 ))}
               </div>
-
-              <motion.h3
-                variants={fadeUp}
-                custom={3}
-                className="text-lg font-semibold flex items-center gap-2 pt-4"
-              >
-                <Award size={20} className="text-cyan-500" />
-                {t("experience.certificates")}
-              </motion.h3>
-              <motion.div variants={fadeUp} custom={4}>
-                <Card className="border-dashed">
-                  <CardContent className="p-5 text-center">
-                    <p className="text-sm text-muted-foreground">
-                      {t("experience.certificates.placeholder")}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
             </motion.div>
           </div>
         </div>
