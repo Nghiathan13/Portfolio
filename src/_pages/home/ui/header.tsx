@@ -14,11 +14,6 @@ export function Header() {
   const [activeId, setActiveId] = useState("");
   const { t } = useI18n();
 
-  const scrollTo = (id: string) => {
-    setMobileOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const navLinks = [
     { key: "about.label", id: "about" },
     { key: "skills.label", id: "skills" },
@@ -26,6 +21,13 @@ export function Header() {
     { key: "experience.label", id: "experience" },
     { key: "contact.label", id: "contact" },
   ];
+  const menuDuration = 0.32;
+  const menuStep = menuDuration / navLinks.length;
+
+  const scrollTo = (id: string) => {
+    setMobileOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     const sectionIds = navLinks.map((l) => l.id);
@@ -56,7 +58,7 @@ export function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || mobileOpen
           ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
@@ -124,21 +126,28 @@ export function Header() {
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="md:hidden overflow-hidden bg-background/95 backdrop-blur-lg border-b border-border"
+            transition={{ duration: menuDuration, ease: "easeInOut" }}
+            className="md:hidden overflow-hidden bg-background/80 backdrop-blur-lg border-b border-border"
           >
             <div className="flex flex-col">
               {navLinks.map((link, i) => {
                 const isActive = activeId === link.id;
-                const step = 0.5 / navLinks.length;
                 return (
                   <motion.button
                     key={link.id}
                     type="button"
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ delay: step * i, duration: step }}
+                    animate={{
+                      opacity: 1,
+                      transition: { delay: menuStep * i, duration: menuStep },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: {
+                        delay: menuStep * (navLinks.length - 1 - i),
+                        duration: menuStep,
+                      },
+                    }}
                     onClick={() => scrollTo(link.id)}
                     className={`relative h-8 px-3 text-sm font-medium text-left transition-colors duration-200 inline-flex items-center active:[transform:none] active:text-foreground ${
                       isActive
